@@ -1,0 +1,44 @@
+<div class="row">
+
+  <mat-card class="example-card m-2 " >
+    <div class="col-12 " *ngFor="let item of Contatos; let i = index; ">
+
+      <mat-card-header class="bg-light d-flex justify-content-center">
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title style="color:green; font-size: 14px;">{{item.nombre  + ' ' + item.apellidos}}</mat-card-title>
+        <mat-card-subtitle>{{item.telefono}}</mat-card-subtitle>
+
+
+        <div class="btn-group" role="group" aria-label="outlined example">
+            <a class="btn btn-sm"><i class="fa fa-edit"></i></a>
+            <a class="btn btn-sm"><i class="fa fa-trash"></i></a>
+            <a class="btn  btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-comment"></i></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"><i class="fa fa-phone"></i>&nbsp;llamada Telefónica</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa fa-edit"></i>&nbsp;Mensaje de Texto</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fab fa-whatsapp"></i>&nbsp;Llamada Whatsapp</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fab fa-whatsapp"></i>&nbsp;Mensaje Whatsapp</a></li>
+            </ul>
+        </div>
+      </mat-card-header>
+
+
+        <div class="btn-group bg-light" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-primary btn-sm">
+            <i class="fa fa-comment"></i>&nbsp;
+            <span class="badge bg-info">5</span>
+          </button>
+          <button type="button" class="btn btn-outline-primary btn-sm">
+            <i class="fa fa-list"></i>&nbsp;
+            <span class="badge bg-info">10</span>
+          </button>
+        </div>
+        <hr width="100%">
+      </div>
+  </mat-card>
+
+</div>
+<app-menu></app-menu>
+<br><br><br>
+<hr>
+
