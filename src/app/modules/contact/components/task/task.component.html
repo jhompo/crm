@@ -1,1 +1,27 @@
-<p>task works!</p>
+
+<div class="col-12">
+  <h1 class="color-text"><b>Tareas</b></h1>
+</div>
+
+<div class="timeline">
+  <div class="container right" *ngFor="let item of Tasks; let i = index;">
+    <div class="content">
+      <p class="color-text"><b>{{item.created_at | date: 'medium' }}</b></p>
+      <p>{{item.tarea}}</p>
+      <p><b>Cliente:</b>{{item.contacts.nombre}}</p>
+      <p><b>Responsable:</b>{{item.responsable}}</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!Tasks?.length">
+  <div class="">
+    <div class="content">
+      <p class="color-text"><b>No hay Tareas registradas</b></p>
+      <p></p>
+    </div>
+  </div>
+</div>
+<app-menu></app-menu>
+<br><br>
+<hr>

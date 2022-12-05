@@ -1,5 +1,8 @@
+import { IComment } from "./IComment";
+import { ITask } from "./ITask";
+
 export interface IContact{
-  id?:BigInteger,
+  id?:number, //BigInteger,
   nombre:string,
   apellidos:string,
   email:string,
@@ -9,4 +12,6 @@ export interface IContact{
   direccion:string,
   id_tipo:number,
   id_origen:number,
+  tasks?:ITask,
+  comentarios?:IComment,
 }

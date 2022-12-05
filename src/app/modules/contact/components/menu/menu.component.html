@@ -2,9 +2,15 @@
 <div class="col-12 in-line d-flex justify-content-center fixed-bottom pt-2">
 
     <div class="btn-group" role="group" aria-label="Basic outlined example">
-      <button type="button" class="btn btn-primary"><i class="fa fa-user"></i><br>Contactos</button>
-      <button type="button" class="btn btn-primary"><i class="fa fa-list"></i><br>Tareas</button>
-      <button type="button" class="btn btn-primary"><i class="fa fa-comment"></i><br>Comentarios</button>
+      <button type="button" class="btn btn-primary" [routerLink]="['/contact/main']">
+          <i class="fa fa-user"></i><br>Contactos
+      </button>
+      <button type="button" class="btn btn-primary" [routerLink]="['/contact/task']">
+          <i class="fa fa-list"></i><br>Tareas
+      </button>
+      <button type="button" class="btn btn-primary" [routerLink]="['/contact/comment']">
+          <i class="fa fa-comment"></i><br>Comentarios
+      </button>
     </div>
 
 </div>

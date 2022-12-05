@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule, MatIconRegistry,MatIcon } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './modules/admin/admin.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,6 +35,8 @@ import { AdminComponent } from './modules/admin/admin.component'
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

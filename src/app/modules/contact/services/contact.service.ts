@@ -4,6 +4,7 @@ import { IContact } from 'src/app/models/IContact';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +23,7 @@ export class ContactService {
     return this.http.get<IContact>(this.ApiURL + this.Objeto + "/" + id);
   }
 
-  Create(id:number,obj:IContact){
+  Create(obj:IContact){
     return this.http.post<IContact>(this.ApiURL + this.Objeto, obj);
   }
 
@@ -30,6 +31,7 @@ export class ContactService {
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.put<IContact>(this.ApiURL + this.Objeto+ "/" + id, obj,{headers:headers});
   }
+
 
   Delete(id:number){
     return this.http.delete(this.ApiURL + this.Objeto + "/" +  id);

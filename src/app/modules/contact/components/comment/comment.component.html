@@ -1,1 +1,24 @@
-<p>comment works!</p>
+<div class="col-12">
+  <h1 class="color-text"><b>Comentarios</b></h1>
+</div>
+<div class="card m-3" *ngFor="let item of Comentarios; let i=index;">
+  <div class="card-body">
+    <h4 class="card-title color-text"><b>{{item.created_at | date: 'medium' }}</b></h4>
+    <p class="card-text">{{ item.comentario }}</p>
+    <a href="#" class="card-link"><b>{{item.contacts.nombre}}</b></a>
+    <!-- <a href="#" class="card-link">Another link</a> -->
+  </div>
+</div>
+
+<div *ngIf="!Comentarios?.length">
+  <div class="">
+    <div class="content">
+      <p class="color-text"><b>No hay Comentarios registrados</b></p>
+      <p></p>
+    </div>
+  </div>
+</div>
+
+<app-menu></app-menu>
+<br><br>
+<hr>

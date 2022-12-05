@@ -6,6 +6,7 @@ import { ContactModule } from './modules/contact/contact.module';
 
 const routes: Routes = [
   //{path:'*',component:AppComponent},
+  {path:'',component:LoginComponent},
   {path:'login',component:LoginComponent},
   {path:'contact',loadChildren:()=>import("./modules/contact/contact.module").then(m=>ContactModule) }
 ];

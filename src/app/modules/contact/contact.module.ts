@@ -10,6 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule, MatIconRegistry,MatIcon } from '@angular/material/icon';
 import { MenuComponent } from './components/menu/menu.component';
+import { FormComponent } from './components/form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { MenuComponent } from './components/menu/menu.component';
     MainComponent,
     TaskComponent,
     CommentComponent,
-    MenuComponent
+    MenuComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,
@@ -25,8 +28,9 @@ import { MenuComponent } from './components/menu/menu.component';
     HttpClientModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
-
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ]
 })
