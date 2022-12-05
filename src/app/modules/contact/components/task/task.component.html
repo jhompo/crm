@@ -8,7 +8,7 @@
     <div class="content">
       <p class="color-text"><b>{{item.created_at | date: 'medium' }}</b></p>
       <p>{{item.tarea}}</p>
-      <p><b>Cliente:</b>{{item.contacts.nombre}}</p>
+      <p><b>Cliente:</b>{{item.contacts?.nombre}}</p>
       <p><b>Responsable:</b>{{item.responsable}}</p>
     </div>
   </div>

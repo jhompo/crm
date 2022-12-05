@@ -1,8 +1,8 @@
-<div class="fixed-top bg-primary">
+<div class="fixed-top bg-info">
   <form [formGroup]="form" class="form-search">
-    <div class="input-group m-1 p-1">
+    <div class="input-group p-1">
       <input class="form-control" maxlength="128" formControlName="filter" placeholder="Buscar por nombre | apellido | email"  type="text" />
-      <span class="input-group-btn"><button class="btn btn-primary btn-sm"  (click)="search(form.get('filter')?.value)">
+      <span class="input-group-btn"><button class="btn btn-primary"  (click)="search(form.get('filter')?.value)">
         <i class="fa fa-search fa-lg">&nbsp;</i></button></span>
     </div>
   </form>
@@ -24,10 +24,10 @@
           <a class="btn btn-sm color-text"><i class="fa fa-trash"></i></a>
           <a class="btn  btn-sm dropdown-toggle color-text" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-comment"></i></a>
           <ul class="dropdown-menu" >
-            <li><a class="dropdown-item" href="#"><i class="fa fa-phone"></i>&nbsp;llamada Telefónica</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fa fa-edit"></i>&nbsp;Mensaje de Texto</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fab fa-whatsapp"></i>&nbsp;Llamada Whatsapp</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fab fa-whatsapp"></i>&nbsp;Mensaje Whatsapp</a></li>
+            <li><a class="dropdown-item" (click)="CreateTask(1,item.id)"><i class="fa fa-phone"></i>&nbsp;llamada Telefónica</a></li>
+            <li><a class="dropdown-item" (click)="CreateTask(2,item.id)"><i class="fa fa-edit"></i>&nbsp;Mensaje de Texto</a></li>
+            <li><a class="dropdown-item" (click)="CreateTask(3,item.id)"><i class="fab fa-whatsapp"></i>&nbsp;Llamada Whatsapp</a></li>
+            <li><a class="dropdown-item" (click)="CreateTask(4,item.id)"><i class="fab fa-whatsapp"></i>&nbsp;Mensaje Whatsapp</a></li>
           </ul>
       </div>
     </mat-card-header>

@@ -93,7 +93,7 @@ export class FormComponent implements OnInit {
            id_origen:this.form.get('id_origen')?.value,
       };
 
-      this.service.Create(obj,).subscribe(data => {
+      this.service.Create(obj).subscribe(data => {
           console.log("INSERT: " + data);
           this.router.navigate(["/contact/main"]);
         },

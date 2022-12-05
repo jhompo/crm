@@ -53,7 +53,7 @@
 
       <div class="form-group d-flex justify-content-between">
         <button type="button" class="btn btn-primary create-account" routerLink="/contact/main">Cancelar</button>
-        <button type="submit" class="btn btn-primary create-account"> {{ myid == 0 ? 'Agregar' : 'Actualizar' }}
+        <button type="submit" class="btn btn-primary create-account"> {{ myid > 0 ? 'Actualizar' : 'Agregar' }}
         </button>
       </div>
   </form>

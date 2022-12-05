@@ -4,6 +4,6 @@ export interface IComment{
   id?:number, //BigInteger,
   id_contact:number,
   comentario:string,
-  contacts:IContact,
+  contacts?:IContact,
   created_at:Date,
 }

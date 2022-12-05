@@ -5,6 +5,7 @@ import { IContact } from 'src/app/models/IContact';
 import { ITask } from 'src/app/models/ITask';
 import { ComunicatorService } from 'src/app/services/comunicator.service';
 import { ContactService } from '../../services/contact.service';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-main',
@@ -17,7 +18,11 @@ export class MainComponent implements OnInit {
   tmpContactos:IContact[] = [];
   form:FormGroup;
 
-  constructor(private service:ContactService, private comunicator:ComunicatorService, public router:Router, fb:FormBuilder) {
+  constructor(private service:ContactService,
+              private serviceTask:TaskService,
+              private comunicator:ComunicatorService,
+              public router:Router, fb:FormBuilder) {
+
     this.form = fb.group({
       filter:new FormControl(''),
     })
@@ -70,6 +75,33 @@ export class MainComponent implements OnInit {
     return Object.keys(obj).length;
   }
 
+  CreateTask(opcion:number,id:any){
+    let accion ="Ninguna";
+    switch(opcion){
+      case 1: accion = "Llamada Telefonica"; break;
+      case 2: accion = "Mensaje de Texto"; break;
+      case 3: accion = "Llamada Whatsapp"; break;
+      case 4: accion = "Mensaje Whatsapp"; break;
+
+    }
+
+    const obj:ITask={
+       id_contact:id,
+       tarea:accion,
+       responsable:"Jonh Smith"
+     };
+
+    this.serviceTask.Create(obj).subscribe(data => {
+        //console.log("INSERT: " + obj);
+
+        //ENVIO DEL OBJETO A SUSCRIPTORES A SUSCRIPTORES
+       // this.comunicator.sendObject(data);
+
+        this.router.navigate(["/contact/task/"+id]);
+      },
+      error=>{console.log(error)
+    });
+  }
   showTask(idcontact:any){
      this.router.navigate(['contact/task/'+idcontact]);
   }

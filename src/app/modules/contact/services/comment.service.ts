@@ -25,7 +25,7 @@ export class CommentService {
   Comments(idcontact:number){
     return this.http.get<IComment[]>(this.ApiURL + "mycomments/" + idcontact);
   }
-  Create(id:number,obj:IComment){
+  Create(obj:IComment){
     return this.http.post<IComment>(this.ApiURL + this.Objeto, obj);
   }
 

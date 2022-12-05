@@ -27,7 +27,7 @@ export class TaskService {
     return this.http.get<ITask[]>(this.ApiURL + "mytasks/" + idcontact);
   }
 
-  Create(id:number,obj:ITask){
+  Create(obj:ITask){
     return this.http.post<ITask>(this.ApiURL + this.Objeto, obj);
   }
 
