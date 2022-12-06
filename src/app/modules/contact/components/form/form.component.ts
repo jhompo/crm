@@ -32,7 +32,7 @@ export class FormComponent implements OnInit {
     this.form=this.fb.group({
        nombre:['',Validators.required],
        apellidos:['',Validators.required],
-       email:['',Validators.required,Validators.email],
+       email:['',Validators.required],
        telefono:[''],
        genero:[''],
        fecha_nacimiento:[''],

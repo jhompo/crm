@@ -24,7 +24,7 @@
       <div class="btn-group" role="group" aria-label="outlined example">
           <a class="btn btn-sm color-text"><i class="fa fa-edit" routerLink="../form/{{item.id}}"></i></a>
           <a class="btn btn-sm color-text"><i class="fa fa-trash" (click)="confirmBox(item.id)"></i></a>
-          <a class="btn  btn-sm dropdown-toggle color-text" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-comment"></i></a>
+          <a class="btn  btn-sm dropdown-toggle color-text" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-bolt"></i></a>
           <ul class="dropdown-menu" >
             <li><a class="dropdown-item" (click)="CreateTask(1,item.id)"><i class="fa fa-phone"></i>&nbsp;llamada Telefónica</a></li>
             <li><a class="dropdown-item" (click)="CreateTask(2,item.id)"><i class="fa fa-edit"></i>&nbsp;Mensaje de Texto</a></li>

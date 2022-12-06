@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  ApiUrl:"http://asercolgroup.com/contactlist/api/"
+  ApiUrl:"https://apicontact.asercolgroup.com/api/" //http://asercolgroup.com/contactlist/api/" //http://apicontact.asercolgroup.com
 
 };

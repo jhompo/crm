@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ApiUrl:"http://contactlist.test/api/"
+  ApiUrl:"https://apicontact.asercolgroup.com/api/"
 };
 
 /*
