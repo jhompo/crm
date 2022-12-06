@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { IContact } from 'src/app/models/IContact';
 import { ITask } from 'src/app/models/ITask';
 import { ComunicatorService } from 'src/app/services/comunicator.service';
+import Swal from 'sweetalert2';
 import { ContactService } from '../../services/contact.service';
 import { TaskService } from '../../services/task.service';
 
@@ -88,7 +89,7 @@ export class MainComponent implements OnInit {
     const obj:ITask={
        id_contact:id,
        tarea:accion,
-       responsable:"Jonh Smith"
+       responsable:"Marco Dubbeld"
      };
 
     this.serviceTask.Create(obj).subscribe(data => {
@@ -98,10 +99,51 @@ export class MainComponent implements OnInit {
        // this.comunicator.sendObject(data);
 
         this.router.navigate(["/contact/task/"+id]);
+
+        Swal.fire(
+          'Registro Guardado!',
+          'Hacer clic en el boton!',
+          'success'
+        );
+
       },
       error=>{console.log(error)
     });
   }
+
+
+  confirmBox(id:any){
+    Swal.fire({
+      title: 'Está seguro de eliminarlo?',
+      text: 'No podra recuperar este registro!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      confirmButtonText: 'Si, Eliminar',
+      cancelButtonText: 'No, no estoy seguro'
+    }).then((result) => {
+      if (result.value) {
+         this.delContact(id);
+
+      } /*else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelado',
+          'tu registro está seguro',
+          'error'
+        )
+      }*/
+    })
+  }
+
+  delContact(id:any){
+
+    this.service.Delete(id).subscribe(
+      data=>{ console.log(data);
+             this.getContactos(); }
+      ,error=>{console.log(error)}
+    );
+  }
+
   showTask(idcontact:any){
      this.router.navigate(['contact/task/'+idcontact]);
   }

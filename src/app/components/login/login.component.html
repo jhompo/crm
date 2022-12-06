@@ -1,27 +1,102 @@
-<mat-card>
-    <mat-card-title>Login</mat-card-title>
-<mat-card-content>
-<form >
-  <p>
-    <mat-form-field>
-      <input type="text" matInput placeholder="Username" formControlName="username">
-    </mat-form-field>
-  </p>
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+      <div class="user_card">
+          <div class="d-flex justify-content-center">
+              <div class="brand_logo_container">
+                  <img src="../../../assets/user.png" class="brand_logo" alt="Logo">
+              </div>
+          </div>
+          <div class="d-flex justify-content-center form_container">
+              <form [formGroup]="loginForm" >
+                  <div class="input-group mb-3">
+                      <div class="input-group-append" >
+                          <span class="input-group-text" style="height:40px !important;"><i class="fa-solid fa-user"></i></span>
+                      </div>
+                      <input type="text" formControlName="email" class="form-control input_user" value="" placeholder="username">
+                  </div>
+                  <div class="input-group mb-2">
+                      <div class="input-group-append">
+                          <span class="input-group-text" style="height:40px !important;"><i class="fa fa-key"></i></span>
+                      </div>
+                      <input type="password" formControlName="password" class="form-control input_pass" value="" placeholder="password">
+                  </div>
+                  <div class="form-group">
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="customControlInline">
+                          <label class="custom-control-label" for="customControlInline">Recordar</label>
+                      </div>
+                  </div>
+                  <div class="d-flex justify-content-center mt-3 login_container">
+                      <button type="submit" name="button" class="btn btn-primary text-white jbg" (click)="Acceder()">Aceptar</button>
+                  </div>
+              </form>
+          </div>
 
-  <p>
-    <mat-form-field>
-      <input type="password" matInput placeholder="Password" formControlName="password">
-    </mat-form-field>
-  </p>
+          <div class="mt-4">
+              <div class="d-flex justify-content-center links">
+                  Olvidó Contraseña? <a href="#" class="ml-2"></a>
+              </div>
+              <div class="d-flex justify-content-center links">
+                  <a href="#">Recuperar Contraseña</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 
-  <!-- <p *ngIf="error" class="error">
-    {{ error }}
-  </p> -->
+<!-- <nb-card-body class="card-body">
+  <ngx-spinner name="sp5" [fullScreen]="false" type="square-jelly-box" size="medium"></ngx-spinner>
+</nb-card-body> -->
 
-  <div class="button">
-    <button type="submit" (click)="Acceder()" mat-button>Login</button>
+<!-- <ngx-spinner [fullScreen]="false" type="ball-scale-multiple" size="medium">
+  <p class="loading">Loading...</p>
+</ngx-spinner>  -->
+
+<!-- <ngx-spinner
+bdColor="rgba(51,51,51,0.6)"
+size="medium"
+color="#fff"
+type="ball-scale-multiple"
+>
+<p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner> -->
+
+<!-- <div class="card text-center">
+  <div class="card-body">
+      <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <h3 class="h3 mb-3 font-weight-normal text-center">Sign in</h3>
+          < !-- Errors - ->
+          <div *ngIf="errors?.email" class="alert alert-danger mt-3">
+              {{ errors?.email }}
+          </div>
+          <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+              {{ errors?.password }}
+          </div>
+          <div *ngIf="errors?.error" class="alert alert-danger mt-3">
+              {{ errors?.error }}
+          </div>
+          < ! -  - Login - - >
+          <div class="row form-group">
+              <div class="mx-auto">
+                  <div class="col-auto">
+                      <label>Email address</label>
+                      <input type="email" class="form-control" formControlName="email">
+                  </div>
+              </div>
+
+          </div>
+          <div class="row form-group">
+              <div class="col-md-6">
+                  <label>Password</label>
+                  <input type="password" class="form-control" formControlName="password">
+              </div>
+          </div>
+          <div class="col-auto">
+              <button type="submit" class="btn mt-3 btn-primary">Aceptar</button>
+
+          </div>
+      </form>
+
   </div>
 
-</form>
-</mat-card-content>
-</mat-card>
+</div> -->

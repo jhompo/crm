@@ -32,7 +32,7 @@ export class FormComponent implements OnInit {
     this.form=this.fb.group({
        nombre:['',Validators.required],
        apellidos:['',Validators.required],
-       email:['',Validators.required],
+       email:['',Validators.required,Validators.email],
        telefono:[''],
        genero:[''],
        fecha_nacimiento:[''],
@@ -78,6 +78,10 @@ export class FormComponent implements OnInit {
 
 
   saveContact(){
+
+    Object.keys(this.form.controls).forEach(key => {
+      this.form.get(key)?.markAsTouched();
+    });
 
     if(this.myid== undefined){
 
